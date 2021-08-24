@@ -8,6 +8,7 @@
 #include <set>
 #include <utility>
 #include <fstream>
+#include <climits>
 
 using namespace std;
 
@@ -32,7 +33,7 @@ void official(vector<int>& clan1, vector<int>& clan2, vector<set<int>>& prefs, v
 }
 
 
-void printit(auto iterable) {
+void printit(vector<vector<int>> iterable) {
   ofstream out("connections.txt");
   out << "{";
   for(int i = 1; i <= n; ++i) {
