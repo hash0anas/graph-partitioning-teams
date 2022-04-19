@@ -12,7 +12,8 @@
 
 using namespace std;
 
-#define n 87   // n = the number of members
+#define n 100   // n = the number of members
+#define PREFS 6 // number of preferences
 
 int common_interests = 0, difference_big5 = 0;
 
@@ -113,7 +114,7 @@ void scoring(vector<set<int>>& prefs, vector<set<int>>& interests, vector<vector
 int main() {
   // Prefs .. each person has up to 6 preferences
   vector<set<int>> prefs(n + 1);
-  cout << "Enter the 6 preferences for each person, from 1-87 ids in order, sep. by white spaces\n";
+  cout << "Enter the 6 preferences for each person, from 1-" << n << " ids in order, sep. by white spaces\n";
   int tmp;
   for(int i = 1; i <= n; ++i) {
     for(int j = 0; j < 6; ++j) {
@@ -144,14 +145,6 @@ int main() {
     }
   }
 
-  // vector<vector<double>> big6(n + 1, vector<double>(6));
-  // cout << "Now, enter the big6 data, in the same manner as prefs.\n";
-  // for(int i = 1; i <= n; ++i) {
-  //   for(int j = 0; j < 6; ++j) {
-  //     cin >> big6[i][j];
-  //   }
-  // }
-  
   //Now, work on the adj. matrix according to the criteria agreed upon earlier.
   vector<vector<int>> adj(n + 1, vector<int>(n + 1));
   for(int i = 1; i <= n; ++i) {
